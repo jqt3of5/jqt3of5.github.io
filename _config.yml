@@ -1,5 +1,6 @@
 theme: minima
 url: https://equationoftime.tech
-author.name: John Todd
-author.email: jqt3of5@gmail.com
+author:
+    name: John Todd
+    email: jqt3of5@gmail.com
 
