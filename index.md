@@ -1,6 +1,4 @@
 ---
-title: Welcome to my blog
-
-# Introduction
+title: EquationOfTime.tech
 ---
 
