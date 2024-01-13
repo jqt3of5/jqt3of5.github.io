@@ -76,6 +76,7 @@ These are the major takeaways from each test:
 So with these in mind, I've decided to refactor my code to meet the newly determined acceptance criteria
 
 ```ASP.NET (C#)
+
 public bool TryExtractPassword(string encodedString, out string password)
 {
     try {
@@ -101,6 +102,7 @@ public bool TryExtractPassword(string encodedString, out string password)
         return false;
     }
 }
+
 ```
 
 With a slight refactor to my existing unit tests, and updating them to assert on the new expectations, I find they all pass and the code quality to 
