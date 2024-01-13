@@ -75,7 +75,7 @@ These are the major takeaways from each test:
 
 So with these in mind, I've decided to refactor my code to meet the newly determined acceptance criteria
 
-```
+```C#
 
     public bool TryExtractPassword(string encodedString, out string password)
     {
