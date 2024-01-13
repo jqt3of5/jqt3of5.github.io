@@ -77,31 +77,31 @@ So with these in mind, I've decided to refactor my code to meet the newly determ
 
 ```ASP.NET (C#)
 
-public bool TryExtractPassword(string encodedString, out string password)
-{
-    try {
-        //The string is base 64 encoded. Will throw an exception if that is not the case
-        var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
-        var str = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
-    
-        //encoded string will be of the format <username>:<password> where the username is alphanumeric, and the password can be any character
-        var matches = Regex.Match("([0-9a-zA-Z]+):(.+)");
+    public bool TryExtractPassword(string encodedString, out string password)
+    {
+        try {
+            //The string is base 64 encoded. Will throw an exception if that is not the case
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            var str = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         
-        //The decoded string did not match the format, fail
-        if (!matches.Any())
+            //encoded string will be of the format <username>:<password> where the username is alphanumeric, and the password can be any character
+            var matches = Regex.Match("([0-9a-zA-Z]+):(.+)");
+            
+            //The decoded string did not match the format, fail
+            if (!matches.Any())
+            {
+                return false;
+            }
+            
+            //Return the second capture group. There will always be two if the match was successfull 
+            password = matches[1];
+            return true;
+        } catch (Exception e)
         {
+            password = null;
             return false;
         }
-        
-        //Return the second capture group. There will always be two if the match was successfull 
-        password = matches[1];
-        return true;
-    } catch (Exception e)
-    {
-        password = null;
-        return false;
     }
-}
 
 ```
 
