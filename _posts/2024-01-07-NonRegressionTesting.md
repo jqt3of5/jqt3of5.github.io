@@ -107,7 +107,8 @@ With a slight refactor to my existing unit tests, and updating them to assert on
 be dramatically improved. I also have a suite of tests that can be kept as regression tests to ensure this code always meets functional requirements. 
 
 These _early functional tests_ provide a great deal of value. Not only did they inform me on the behavior of my code, they highlighted some serious
-gaps in my pre- and post-conditions, as well as my architecture. The original code was bad. Sure it met the primary criteria, but it's the kind of code that bites the next person who has to touch it. 
+gaps in my pre- and post-conditions, as well as my architecture. The original code was bad. Sure it met the primary criteria, 
+but it's the kind of code that bites the next person who has to touch it. And I honestly didn't realize it until I started building a test suite. 
 
 As you hopefully have seen, adding these tests to the regression suite is a mere byproduct, but not how they contributed their primary value. 
 While the tests exemplified here are inexpensive to run and maintain long term, not every test written during this phase of development will require that they be kept long term. 
